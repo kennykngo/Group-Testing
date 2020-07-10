@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Napolo-Sim/Group-Testing#readme",
   "dependencies": {
-    "bulma": "^0.9.0"
+    "bulma": "^0.9.0",
+    "nes.css": "^2.3.0"
   }
 }
