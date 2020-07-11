@@ -2,8 +2,20 @@ const pokeName = document.querySelector(`.Pokemon-name`);
 const pokeType = document.querySelector(`.Pokemon-type`);
 const pokeImage = document.querySelector(`.Pokemon-image`);
 const submitBtn = document.querySelector(`.submitBtn`);
+const pokeListItems = document.querySelectorAll(`.list-item`);
+
+let prevUrl = null;
+let nextUrl = null;
+
+//This is for the next and previous buttons 
+// const leftButton = document.querySelector(`.left-button`);
+// const rightButton = document.querySelector(`.right-button`);
 
 $(document).ready(function () {
+    $("#pokemonName")
+    $("pokemonType")
+    
+    
     $(submitBtn).on("click", (event) => {
         event.preventDefault();
         let pokemon = $("#userInput").val();
