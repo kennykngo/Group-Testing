@@ -1,15 +1,68 @@
+const mainScreen = document.querySelector(`.main-screen`)
 const pokeName = document.querySelector(`.Pokemon-name`);
 const pokeType = document.querySelector(`.Pokemon-type`);
 const pokeImage = document.querySelector(`.Pokemon-image`);
 const submitBtn = document.querySelector(`#submitBtn`);
 const pokeListItems = document.querySelectorAll(`.list-item`);
 
+////////////////////////////////////////////////////////////////
 let prevUrl = null;
 let nextUrl = null;
 
-//This is for the next and previous buttons
-// const leftButton = document.querySelector(`.left-button`);
-// const rightButton = document.querySelector(`.right-button`);
+const fetchPokeData = (id) => {
+  fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+
+      resetScreen();
+
+      const dataTypes = data.types;
+      const dataFirstType = dataTypes[0];
+      pokeTypeOne.textContent = dataFirstType.type.name;
+
+      mainScreen.classList.add(dataFirstType.type.name);
+      mainScreen.classList.remove(`hide`);
+
+      pokeName.textContent = data.name;
+      pokeId.textContent = data.id;
+
+      pokeFrontImage.src = data.sprites.front_default || "";
+    });
+}
+
+
+const handleLeftButtonClick = () => {
+  if (prevUrl) {
+    fetchPokeList(prevUrl)
+  }
+};
+
+const handleRightButtonClick = () => {
+  if (nextUrl) {
+    fetchPokeList(nextUrl)
+  }
+};
+
+const handleListItemClick = (e) => {
+  if (!e.target) return;
+
+  const listItem = e.target;
+  if (!listItem.textContent) return;
+
+  const id = listItem.textContent.split(".")[0];
+  fetchPokeData(id);
+};
+
+//This is for the next and previous buttons on home page
+leftButton.addEventListener("click", handleLeftButtonClick)
+rightButton.addEventListener("click", handleRightButtonClick)
+
+for (const pokeListitem of pokeListItems) {
+  pokeListitem.addEventListener("click", handleListItemClick)
+}
+
+////////////////////////////////////////////////////////////////
 
 $(document).ready(function () {
   $("#pokemonName");
@@ -63,5 +116,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+//Napoleon Testing //////////////////////////////////////
+const fetchPokeList = (url) => {
+  //Get data for card displays on home screen
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      const { results, previous, next } = data;
+      prevUrl = previous;
+      nextUrl = next;
+
+      for (let i = 0; i < pokeListItems.length; i++) {
+        const pokeListItem = pokeListItems[i];
+        const resultData = results[i];
+        const { name } = resultData;
+
+        if (resultData) {
+          const { name, url } = resultData;
+          const urlArray = url.split("/");
+          const id = urlArray[urlArray.length - 2];
+          pokeListItem.textContent = id + ". " + name;
+        } else {
+          pokeListItem.textContent = "";
+        }
+      }
+    });
+}
+//Initialize App 
+fetchPokeList("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20");
 
 //module.exports = { pokeName };
