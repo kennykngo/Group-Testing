@@ -4,14 +4,14 @@ const pokeType = document.querySelector(`.Pokemon-type`);
 const pokeImage = document.querySelector(`.Pokemon-image`);
 const submitBtn = document.querySelector(`#submitBtn`);
 const pokeListItems = document.querySelectorAll(`.list-item`);
+const leftButton = document.querySelector(`.left-button`);
+const rightButton = document.querySelector(`.right-button`);
 
 ////////////////////////////////////////////////////////////////
 let prevUrl = null;
 let nextUrl = null;
 
 $(document).ready(function () {
-  $("#pokemonName");
-  $("pokemonType");
 
   $(".userSearch").hide();
 
@@ -37,7 +37,7 @@ $(document).ready(function () {
   });
 });
 
-////////////////////////////////////////////////////////////////////////////////////////////////TESTING
+//Toggle button functionality
 document.addEventListener("DOMContentLoaded", () => {
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(
@@ -117,9 +117,7 @@ for (const pokeListitem of pokeListItems) {
   pokeListitem.addEventListener("click", handleListItemClick)
 }
 
-////////////////////////////////////////////////////////////////
-
-//Napoleon Testing //////////////////////////////////////
+//Napoleon More Testing //////////////////////////////////////
 const fetchPokeList = (url) => {
   //Get data for card displays on home screen
   fetch(url)
