@@ -124,17 +124,26 @@ const fetchPokeList = (url) => {
     .then(res => res.json())
     .then(data => {
       console.log(data);
-      const { results, previous, next } = data;
+      const {
+        results,
+        previous,
+        next
+      } = data;
       prevUrl = previous;
       nextUrl = next;
 
       for (let i = 0; i < pokeListItems.length; i++) {
         const pokeListItem = pokeListItems[i];
         const resultData = results[i];
-        const { name } = resultData;
+        const {
+          name
+        } = resultData;
 
         if (resultData) {
-          const { name, url } = resultData;
+          const {
+            name,
+            url
+          } = resultData;
           const urlArray = url.split("/");
           const id = urlArray[urlArray.length - 2];
           pokeListItem.textContent = id + ". " + name;
