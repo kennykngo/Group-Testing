@@ -133,20 +133,21 @@
               </div>
             </div>
           </li>
+
           <li class="nav-item">
             <!-- Button trigger modal -->
             <button
               type="button"
               class="btn"
               data-toggle="modal"
-              data-target="#exampleModal"
+              data-target="#exampleModal1"
             >
               Log in
             </button>
             <!-- Modal -->
             <div
               class="modal fade"
-              id="exampleModal"
+              id="exampleModal1"
               tabindex="-1"
               role="dialog"
               aria-labelledby="exampleModalLabel"
@@ -168,7 +169,28 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    ...
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="exampleInputEmail1"
+                          aria-describedby="emailHelp"
+                        />
+                        <small id="emailHelp" class="form-text text-muted"
+                          >We'll never share your email with anyone else.</small
+                        >
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                        />
+                      </div>
+                    </form>
                   </div>
                   <div class="modal-footer">
                     <button
