@@ -63,7 +63,7 @@
             <!-- Button trigger modal -->
             <button
               type="button"
-              class="btn"
+              class="signupBtn"
               data-toggle="modal"
               data-target="#exampleModal"
             >
@@ -94,13 +94,13 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    <form>
+                    <form id=registerForm>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail">Email address</label>
                         <input
                           type="email"
                           class="form-control"
-                          id="exampleInputEmail1"
+                          id="exampleInputEmail"
                           aria-describedby="emailHelp"
                         />
                         <small id="emailHelp" class="form-text text-muted"
@@ -108,24 +108,25 @@
                         >
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
+                        <label for="exampleInputPassword">Password</label>
                         <input
                           type="password"
                           class="form-control"
-                          id="exampleInputPassword1"
+                          id="exampleInputPassword"
                         />
                       </div>
                     </form>
                   </div>
                   <div class="modal-footer">
                     <button
+                      id="registerCancel"
                       type="button"
                       class="btn btn-secondary"
                       data-dismiss="modal"
                     >
                       Cancel
                     </button>
-                    <button type="button" class="btn btn-primary">
+                    <button action="submit" type="button" class="btn btn-primary">
                       Register
                     </button>
                   </div>
@@ -138,7 +139,7 @@
             <!-- Button trigger modal -->
             <button
               type="button"
-              class="btn"
+              class="loginBtn"
               data-toggle="modal"
               data-target="#exampleModal1"
             >
@@ -169,7 +170,7 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    <form>
+                    <form id="loginForm">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input
@@ -194,13 +195,14 @@
                   </div>
                   <div class="modal-footer">
                     <button
+                      id="loginCancel"
                       type="button"
                       class="btn btn-secondary"
                       data-dismiss="modal"
                     >
                       Cancel
                     </button>
-                    <button type="button" class="btn btn-primary">
+                    <button action="submit" type="button" class="btn btn-primary">
                       Log in
                     </button>
                   </div>
@@ -466,5 +468,6 @@
     <!-- font awesome (kenny) -->
     <script src="https://use.fontawesome.com/074dab3e64.js"></script>
     <script src="./assets/app.js"></script>
+    <script src="./assets/index1.js"></script>
   </body>
 </html>
