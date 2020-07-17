@@ -4,12 +4,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
@@ -91,7 +85,7 @@
     <div class="nav-wrapper white">
       <div class="row">
         <div class="col sm-12">
-          <a href="./index.html" class="brand-logo"> <img src="../Images/Pokemon Trade Logo Website.png"
+          <a href="./index.html" class="brand-logo"> <img src="../client/assets/Images/Pokemon Trade Logo Website.png"
               style="height: 65px;"></a>
           <a href="#!" data-target="mobile-demo" class="sidenav-trigger" style="color: darkgray;"><i
               class="material-icons">menu</i></a>
@@ -123,111 +117,20 @@
   <main>
     <div class="parallax-container">
       <div class="parallax">
-        <img src="../Images/pokemon-go.jpg" />
+        <img src="../client/assets/Images/pokemon-go.jpg" />
       </div>
     </div>
-    <div class="section brown darken-3">
+    <!-- <div class="section green darken-3">
       <div class="row container">
         <h2 class="header white-text" id="cityName">All Pokemon Here!</h2>
       </div>
-    </div>
+    </div> -->
     <div class="parallax-container">
       <div class="parallax">
-        <img src="../images/pokemon-go.jpg" />
+        <img src="../client/assets/Images/pokemon-go.jpg" />
       </div>
     </div>
-    <!-- <nav>
-    <div class="nav-wrapper">
-      <img href="../Images/Pokemon Trade Logo Website.png" class="brand-logo"></img>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="collection.html">Collection</a></li>
-        <li><a href="trade.html">Trade</a></li>
-        <li> -->
-    <!-- Register -->
-    <!-- <a class="signupBtn" href="#!"><i class="material-icons right">assignment</i>Register</a> -->
-    <!-- THIS CODE DOES NOT ALLOW THE MODALS TO WORK YET -->
-    <!-- <div id="registerModal" class="modal">
-            <div class="modal-content">
-              <h4>The Coffee Diaries</h4>
-              <p>Register for your free account</p>
-              <form id="registerForm">
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="registerEmail" type="email" class="validate" />
-                    <label for="email">Email</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="registerPassword" type="password" class="validate" />
-                    <label for="password">Password</label>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col s6">
-                    <a href="#!" id="registerCancel" class="waves-effect waves-green btn-flat"><i
-                        class="material-icons left">cancel</i>Cancel</a>
-                  </div>
-                  <div class="col s6">
-                    <div class="right-align">
-                      <button action="submit" class="waves-effect waves-light btn">
-                        <i class="material-icons left">assignment</i>Register
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-
-        </li>
-        <li> -->
-    <!-- Log in -->
-    <!-- <a class="loginBtn" href="#"><i class="material-icons right">account_circle</i>Login</a>
-          <div id="loginModal" class="modal">
-            <div class="modal-content">
-              <h4>The Coffee Diaries</h4>
-              <p>Login to your account</p>
-              <form id="loginForm"></form>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="loginEmail" type="email" class="validate" />
-                  <label for="email">Email</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="loginPassword" type="password" class="validate" />
-                  <label for="password">Password</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s6">
-                  <a href="#!" id="loginCancel" class="waves-effect waves-green btn-flat"><i
-                      class="material-icons left">cancel</i>Cancel</a>
-                </div>
-                <div class="col s6">
-                  <div class="right-align">
-                    <button action="submit" class="waves-effect waves-light btn purple">
-                      <i class="material-icons left">account_circle</i>Login
-                    </button>
-                  </div>
-                </div>
-              </div>
-              </form>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav> -->
-
-
     <!-- NAVBAR END -->
-
-    <!-- SEARCHBOX START-->
-    <!-- <div class="nes-container with-title is-centered"> -->
     <div class="row">
       <form class="col s12">
         <div class="row">
@@ -262,15 +165,18 @@
 
     <!-- Cards to explore -->
     <!-- <div class="right-container"> -->
-    <div class="row">
-      <div class="col-md-3">
-        <div class="card">
-          <img class="card-img-top" src="" />
-          <div class="card-body">
-            <p class="card-text list-item"></p>
-          </div>
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator card-img-top" src="">
+        </div>
+        <div class="card-content">
+          <p class="card-text list-item"></p>
+        </div>
+        <div class="card-reveal">
         </div>
       </div>
+
+      <!-- Card Testing -->
       <div class="col-lg-3">
         <div class="card">
           <img class="card-img-top" src="" />
