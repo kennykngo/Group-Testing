@@ -1,51 +1,41 @@
 $(document).ready(function () {
-  const loginModal = document.getElementById("exampleModal1");
+  $(".parallax").parallax();
+  $(".sidenav").sidenav();
+  const loginModal = document.getElementById("loginModal");
   const loginModalInstance = M.Modal.init(loginModal, { dismissible: true });
-
-  const registerModal = document.getElementById("exampleModal");
+  const registerModal = document.getElementById("registerModal");
   const registerModalInstance = M.Modal.init(registerModal, {
     dismissible: true,
   });
-
   $("#loginForm").on("submit", function (e) {
     e.preventDefault();
-    console.log("hi");
     const newUser = {
-      email: $("#exampleInputEmail1").val().trim(),
-      password: $("#exampleInputPassword1").val().trim(),
+      email: $("#loginEmail").val().trim(),
+      password: $("#loginPassword").val().trim(),
     };
-    loginUser(newUser).then(() => {
-      console.log(newUser);
-      window.location.replace("/collection")
-    });
+    loginUser(newUser).then(() => window.location.replace("/collection"));
   });
-
   $("#registerForm").on("submit", function (e) {
     e.preventDefault();
     const newUser = {
-      email: $("#exampleInputEmail").val().trim(),
-      password: $("#exampleInputPassword").val().trim(),
+      email: $("#registerEmail").val().trim(),
+      password: $("#registerPassword").val().trim(),
     };
-    registerUser(newUser).then(() => location.replace("/"));
+    registerUser(newUser).then(() => location.replace("/collection"));
   });
-
   $(".signupBtn").on("click", function () {
     registerModalInstance.open();
   });
-
   $(".loginBtn").on("click", function () {
     loginModalInstance.open();
   });
-
   $("#loginCancel").on("click", function () {
     loginModalInstance.close();
   });
-
   $("#registerCancel").on("click", function () {
     registerModalInstance.close();
   });
-})
-
+});
 const loginUser = (userObj) => {
   return new Promise((resolve, reject) => {
     $.ajax({
@@ -58,7 +48,6 @@ const loginUser = (userObj) => {
     );
   });
 };
-
 const registerUser = (userObj) => {
   return new Promise((resolve, reject) => {
     $.ajax({
