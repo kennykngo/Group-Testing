@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/index.css">
   <title>PokeTrade Home</title>
 </head>
 
@@ -81,31 +83,34 @@
   </div>
 
   <!-- Navbar Starts here -->
-  <nav>
-    <div class="nav-wrapper white">
-      <div class="row">
-        <div class="col sm-12">
-          <a href="./index.html" class="brand-logo"> <img src="./assets/Images/Pokemon Trade Logo Website.png"
-              style="height: 65px;"></a>
-          <a href="#!" data-target="mobile-demo" class="sidenav-trigger" style="color: darkgray;"><i
-              class="material-icons">menu</i></a>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper white">
+        <div class="row">
+          <div class="col sm-12">
+            <a href="./index.html" class="brand-logo"> <img src="./assets/Images/Pokemon Trade Logo Website.png"
+                style="height: 56px;"></a>
+            <a href="#!" data-target="mobile-demo" class="sidenav-trigger" style="color: darkgray;"><i
+                class="material-icons">menu</i></a>
+          </div>
+          <ul class="right hide-on-med-and-down">
+            <li class="active"><a href="index.html" style="color: darkgray;">Home</a></li>
+            <li><a href="collection.html" style="color: darkgray;">Collections</a></li>
+            <li><a href="trade.html" style="color: darkgray;">Trade</a></li>
+            <li>
+              <a class="signupBtn" href="#!" style="color: darkgray;"><i class="material-icons right">assignment</i>Sign
+                up</a>
+            </li>
+            <li>
+              <a class="loginBtn" href="#!" style="color: darkgray;"><i
+                  class="material-icons right">account_circle</i>Login</a>
+            </li>
+          </ul>
         </div>
-        <ul class="right hide-on-med-and-down">
-          <li class="active"><a href="index.html" style="color: darkgray;">Home</a></li>
-          <li><a href="collection.html" style="color: darkgray;">Collections</a></li>
-          <li><a href="trade.html" style="color: darkgray;">Trade</a></li>
-          <li>
-            <a class="signupBtn" href="#!" style="color: darkgray;"><i class="material-icons right">assignment</i>Sign
-              up</a>
-          </li>
-          <li>
-            <a class="loginBtn" href="#!" style="color: darkgray;"><i
-                class="material-icons right">account_circle</i>Login</a>
-          </li>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
+
   <ul class="sidenav" id="mobile-demo">
     <li>
       <a class="signupBtn" href="#!"><i class="material-icons right">assignment</i>Register</a>
@@ -117,7 +122,7 @@
   <main>
     <div class="parallax-container">
       <div class="parallax">
-        <img src="./assets/Images/pokemon-go.jpg" />
+        <img src="./assets/Images/pokemon-trading-opening.jpg" />
       </div>
     </div>
     <div class="section white">
@@ -158,11 +163,11 @@
   </div>
   </div>
   </div>
-  <div class="parallax-container">
+  <!-- <div class="parallax-container">
     <div class="parallax">
-      <img src="../client/assets/Images/pokemon-go.jpg" />
+      <img src="./assets/Images/pokemon-go.jpg" />
     </div>
-  </div>
+  </div> -->
   <!-- NAVBAR END -->
 
 
