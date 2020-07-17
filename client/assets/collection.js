@@ -5,17 +5,16 @@ $(document).ready(function () {
         type: "POST",
         url: "/logs/new",
         data: {
-          company: $("#companyInput").val().trim(),
-          roast: $("#roastInput").val().trim(),
-          description: $("#descriptionInput").val().trim(),
+          // company: $("#companyInput").val().trim(),
+          // roast: $("#roastInput").val().trim(),
+          // description: $("#descriptionInput").val().trim(),
           name: $("#nameInput").val().trim(),
         },
-
       }).then((res) => {
-        console.log(res); 
-        $("#companyInput").val("");
-        $("#roastInput").val("");
-        $("#descriptionInput").val("");
+        console.log(res);
+        // $("#companyInput").val("");
+        // $("#roastInput").val("");
+        // $("#descriptionInput").val("");
         $("#nameInput").val("");
         logInstance.close();
         resolve("success");
@@ -32,7 +31,8 @@ $(document).ready(function () {
         console.log(logs);
         $("#logsContainer").empty();
         logs.forEach((log) => {
-          let { name, company, roast, description } = log;
+          // , company, roast, description
+          let { name } = log;
           if (name) {
             name = `<p>${name}</p>`;
           } else {
@@ -44,18 +44,17 @@ $(document).ready(function () {
             <div class="card brown darken-1">
               <div class="card-content white-text">
               ${name}
-              <span class="card-title">${company}</span>
-              <br>
-              <p>${roast}</p>
-              <p>${description}</p>
-
               </div>
             </div>
           </div>
           `);
-          resolve("success");
+          // resolve("success");
         });
-        // resolve("success");
+        // <span class="card-title">${company}</span>
+        // <br>
+        // <p>${roast}</p>
+        // <p>${description}</p>
+        resolve("success");
       });
     });
   };
