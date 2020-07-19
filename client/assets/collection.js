@@ -14,7 +14,7 @@ $(document).ready(function () {
       console.log(response);
       //Name
 
-      createLog(response.name)
+      createLog(response.name, response.sprites.front_default, response.types[0].type.name)
         .then(() => renderLogs());
 
 
@@ -27,15 +27,15 @@ $(document).ready(function () {
 
   });
 
-  const createLog = (name) => {
+  const createLog = (name, image, type) => {
     return new Promise((resolve, reject) => {
       $.ajax({
         type: "POST",
         url: "/logs/new",
         data: {
           name: name,
-          // image: image,
-          // type: type,
+          image: image,
+          type: type,
         },
       }).then((res) => {
         console.log(res);
@@ -53,10 +53,10 @@ $(document).ready(function () {
         url: "/logs/user",
       }).then((logs) => {
         console.log(logs);
-        $("#logsContainer").empty();
+        $("#recent-cards").empty();
         logs.forEach((log) => {
           // , company, roast, description
-          let { name } = log;
+          let { name, image, type } = log;
           if (name) {
             name = `<p>${name}</p>`;
           } else {
@@ -73,19 +73,20 @@ $(document).ready(function () {
           // </div>
           // `);
 
+
           $("#recent-cards").append(`
-                  <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="">
+            <div class="card col s12 m12 l3 valign-wrapper" style="margin-left: 3% ;margin-right: 3%" >
+              <div class="col card-image waves-effect waves-block waves-light">
+                <img class="activator" src="${image}">
+              </div>
+              <div class="card-content center-align">
+                <span class="card-title activator grey-text text-darken-4 center">${name}<i class="material-icons right">more_vert</i></span>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">${name}<i class="material-icons right">close</i></span>
+                <p>Type: ${type}</p>
+              </div>
             </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">${name}<i class="material-icons right">more_vert</i></span>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">${name}<i class="material-icons right">close</i></span>
-              <p></p>
-            </div>
-          </div>
                   `)
         });
         resolve("success");
