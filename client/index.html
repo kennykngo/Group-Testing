@@ -95,7 +95,7 @@
           </div>
           <ul class="right hide-on-med-and-down">
             <li class="active"><a href="index.html" style="color: darkgray;">Home</a></li>
-            <li><a href="collection.html" style="color: darkgray;">Collections</a></li>
+            <li><a href="collection.html" style="color: darkgray;">Collection</a></li>
             <li><a href="trade.html" style="color: darkgray;">Trade</a></li>
             <li>
               <a class="signupBtn" href="#!" style="color: darkgray;"><i class="material-icons right">assignment</i>Sign
@@ -111,7 +111,11 @@
     </nav>
   </div>
 
+  <!-- Side nav-->
   <ul class="sidenav" id="mobile-demo">
+    <li class="active"><a href="index.html">Home</a></li>
+    <li><a href="collection.html">Collection</a></li>
+    <li><a href="trade.html">Trade</a></li>
     <li>
       <a class="signupBtn" href="#!"><i class="material-icons right">assignment</i>Register</a>
     </li>
@@ -133,11 +137,11 @@
 
         <form>
           <div class="row">
-            <div class="input-field col s10 offset-s1 l6 offset-l3">
+            <div class="input-field col s10 offset-s1 m10 offset-m1 l6 offset-l3">
               <input class="validate" style="border: 2px solid #ccc; border-radius: 3px; padding: 5px" type="search"
                 placeholder="Search Pokemon Name" aria-label="Search" id="userInput" />
               <label for="pokemon_search">Pokemon Search</label>
-              <button class="btn teal darken-3" id="submitBtn" type="submit">
+              <button class="col btn teal darken-3" id="submitBtn" type="submit">
                 Search
                 <i class="material-icons right">send</i>
               </button>
@@ -146,18 +150,20 @@
         </form>
   </main>
 
+  <!-- width: 16rem;  -->
   <!-- pokemon card?  -->
-
-  <div class="content userSearch valign-wrapper center-align row center">
-    <div class="card center-align" style="width: 16rem; height: 20rem;">
-      <img src="" class="card-img-top Pokemon-image" style="width: 200px; height: 200px; position: center;" />
-      <div class="card-body">
-        <h5 class="card-title Pokemon-name"></h5>
-        <p class="card-text Pokemon-type"></p>
-      </div>
-      <div class="card-body">
-        <a href="#" class="card-link"></a>
-        <a href="#" class="card-link"></a>
+  <div class="row">
+    <div class="row content userSearch valign-wrapper center-align row center">
+      <div class="card center-align col m5 offset-m4 s12 l4 offset-l4" style="height: 20rem;">
+        <img src="" class="card-img-top Pokemon-image" style="width: 200px; height: 200px; position: center;" />
+        <div class="card-body">
+          <h5 class="card-title Pokemon-name"></h5>
+          <p class="card-text Pokemon-type"></p>
+        </div>
+        <div class="card-body">
+          <a href="#" class="card-link"></a>
+          <a href="#" class="card-link"></a>
+        </div>
       </div>
     </div>
   </div>
@@ -173,8 +179,7 @@
 
 
 
-  <!-- Cards to explore -->
-  <!-- <div class="right-container"> -->
+  <!-- 20 Card PlaceHolders -->
   <div class="card">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator card-img-top" src="">
@@ -186,178 +191,222 @@
     </div>
   </div>
 
-  <!-- Card Testing -->
-  <div class="col-lg-3">
-    <div class="card">
-      <img class="card-img-top" src="" />
-      <div class="card-body">
-        <p class="card-text list-item"></p>
-      </div>
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
     </div>
   </div>
-  <div class="col-lg-3">
-    <div class="card">
-      <img class="card-img-top" src="" />
-      <div class="card-body">
-        <p class="card-text list-item"></p>
-      </div>
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
     </div>
   </div>
-  <div class="col-lg-3">
-    <div class="card">
-      <img class="card-img-top" src="" />
-      <div class="card-body">
-        <p class="card-text list-item"></p>
-      </div>
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
     </div>
   </div>
   </div>
-  <div class="row">
-    <div class="col-md-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="card">
-        <img class="card-img-top" src="" />
-        <div class="card-body">
-          <p class="card-text list-item"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- </div> -->
+
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col s2 offset-s3 offset-l4">
         <button type="button" class="btn btn-secondary left-button">
           Previous
         </button>
       </div>
-      <div class="col-sm-6">
+      <div class="col s2 offset-s2">
         <button type="button" class="btn btn-primary right-button">
           Next
         </button>

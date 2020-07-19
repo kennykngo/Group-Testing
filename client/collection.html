@@ -57,7 +57,7 @@
         <ul class="right hide-on-med-and-down">
           <!-- New Navbar Pieces Testing -->
           <li><a href="index.html" style="color: darkgray;">Home</a></li>
-          <li class="active"><a href="collection.html" style="color: darkgray;">Collections</a></li>
+          <li class="active"><a href="collection.html" style="color: darkgray;">Collection</a></li>
           <li><a href="trade.html" style="color: darkgray;">Trade</a></li>
           <li>
             <a id="newLogBtn" href="#!" style="color: darkgray;"><i class="material-icons right">assignment</i>New
@@ -74,21 +74,40 @@
   <!-- expandable side nav -->
   <ul class="sidenav" id="mobile-demo">
     <li>
-      <a class="newLogBtn" href="#!"><i class="material-icons right">assignment</i>New Log</a>
+      <a href="index.html">Home</a>
     </li>
     <li>
-      <a class="loginBtn" href="#"><i class="material-icons right">exit_to_app</i>Logout</a>
+      <a href="collection.html">Collection</a>
+    </li>
+    <li>
+      <a class="active" href="trade.html">Trade</a>
+    </li>
+    <li>
+      <a id="newLogBtn" href="#!"><i class="material-icons right">assignment</i>New Log</a>
+    </li>
+    <li>
+      <a class="logoutBtn" href="/auth/logout"><i class="material-icons right">exit_to_app</i>Logout</a>
+      <!-- <a class="loginBtn" href="#"><i class="material-icons right">exit_to_app</i>Logout</a> -->
     </li>
   </ul>
   <main class="#ffecb3 amber lighten-4">
-    <div class="container">
-      <div class="col s8 offset-s2 userSearch" id="logsContainer"></div>
+    <div class="row">
+      <div class="col s8 userSearch" id="logsContainer">
+        <!-- <div class="col s8 offset-s2 userSearch" id="logsContainer"> -->
+        <!-- <div class="container"> -->
+      </div>
     </div>
   </main>
 
   <!-- pokemon recently viewed cards -->
-  <div class="row">
-    <div id="recent-cards"></div>
+  <div class="container">
+
+  </div>
+
+  <div class="container">
+    <!-- <div class="row"> -->
+    <div id="recent-cards" class="row"></div>
+    <!-- </div> -->
   </div>
 
   <!-- POKEMON COLLECTION OF USER CARDS (Requires JS Code to function correctly)-->
