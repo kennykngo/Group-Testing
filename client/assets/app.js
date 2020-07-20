@@ -79,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-//Napoleon Testing Start ////////////////////////////////////////////
 
 const fetchPokeData = (id) => {
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -134,7 +133,7 @@ for (const pokeListitem of pokeListItems) {
   pokeListitem.addEventListener("click", handleListItemClick)
 }
 
-//Napoleon More Testing //////////////////////////////////////
+
 const fetchPokeList = (url) => {
   //Get data for card displays on home screen
   fetch(url)
