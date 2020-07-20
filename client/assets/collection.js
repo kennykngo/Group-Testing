@@ -1,4 +1,5 @@
 const submitBtn = document.querySelector(`#submitBtn`);
+const newLogBtn = document.querySelectorAll("#newLogBtn");
 
 $(document).ready(function () {
 
@@ -102,7 +103,10 @@ $(document).ready(function () {
 
   renderLogs();
 
-  $("#newLogBtn").on("click", () => logInstance.open());
+  $(newLogBtn).on("click", () => {
+    console.log("before");
+    logInstance.open();
+  });
   $("#logCancel").on("click", () => logInstance.close());
 
 
