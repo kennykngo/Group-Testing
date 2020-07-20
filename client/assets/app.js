@@ -11,6 +11,23 @@ const rightButton = document.querySelector(`.right-button`);
 let prevUrl = null;
 let nextUrl = null;
 
+// Initializes 20 cards at home screen???
+// for (var i = 0; i < 20; i++) {
+//   $(".card-testing").append(` <div class="card">
+// <div class="card-image waves-effect waves-block waves-light">
+// <img class="activator card-img-top" src="">
+// </div>
+// <div class="card-content">
+// <p class="card-text list-item"></p>
+// </div>
+// <div class="card-reveal">
+// </div>
+// </div>`);
+// }
+// END
+
+
+
 $(document).ready(function () {
 
   $(".userSearch").hide();
@@ -169,4 +186,3 @@ const fetchPokeList = (url) => {
 //Initialize App 
 fetchPokeList("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20");
 
-//module.exports = { pokeName };

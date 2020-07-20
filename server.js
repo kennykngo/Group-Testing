@@ -11,9 +11,10 @@ const {
     getRoomUsers
 } = require('./utils/users');
 
+// Requiring necessary npm packages
+const express = require("express");
 const session = require("express-session");
 const passport = require("passport");
-const db = require("./models");
 const app = express();
 
 const server = http.createServer(app);
@@ -80,7 +81,9 @@ io.on('connection', socket => {
     });
 });
 
+// Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
+const db = require("./models");
 
 // Enables the use of .env files
 require("dotenv").config();
@@ -92,6 +95,7 @@ app.use(express.urlencoded({
 }));
 app.use(express.static("./client"));
 
+// We need to use sessions to keep track of our user's login status
 app.use(
     session({
         secret: process.env.SECRET,
@@ -113,6 +117,7 @@ const profileRoutes = require("./routes/profile-routes.js");
 // use routes
 app.use(clientRoutes, apiRoutes, logRoutes, profileRoutes);
 
+// Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {
     app.listen(PORT, () => console.log(`listening at http://localhost:${PORT}`));
 });
