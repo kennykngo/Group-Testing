@@ -52,6 +52,19 @@ $(document).ready(function () {
       pokeImage.src = response.sprites.front_default;
     });
   });
+
+  for (var i = 0; i < 20; i++) {
+    $(".demo").append(`  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator card-img-top" src="">
+    </div>
+    <div class="card-content">
+      <p class="card-text list-item"></p>
+    </div>
+    <div class="card-reveal">
+    </div>
+  </div>`);
+  }
 });
 
 //Toggle button functionality
