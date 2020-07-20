@@ -25,8 +25,8 @@
                 <div class="form-control">
                     <label for="room">Room</label>
                     <select name="room" id="room">
-                        <option value="JavaScript">Global</option>
-                        <option value="Python">Trade</option>
+                        <option value="Global">Global</option>
+                        <option value="Trade">Trade</option>
                     </select>
                 </div>
                 <button type="submit" class="btn">Join Chat</button>
@@ -36,8 +36,7 @@
 
     <!-- sidenav -->
     <div id="mySidenav" class="sidenav">
-        <a href="index.html" id="Home">Home</a>
-        <a href="collection.html" id="Collection">Colection</a>
+        <a href="/" id="Home">Home</a>
     </div>
 
     <footer>
@@ -48,8 +47,6 @@
                     <p><strong>Sitemap</strong></p>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="collection.html">Collection</a></li>
-
-                    <li><a href="">Contact Address</a></li>
                 </ul>
             </ul>
         </div>
@@ -57,10 +54,18 @@
             This website is created by Team 5 | Copyright &copy; 2020
         </bottom>
         <div class="top">
-            <p><a href="#top">
-                    <!--&uarr;--> &#9650; Top</a></p>
+            <p>
+                <a href="#top">
+                    <!--&uarr;-->
+                    &#9650; Top</a>
+            </p>
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+        integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4=" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
