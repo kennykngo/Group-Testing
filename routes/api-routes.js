@@ -14,6 +14,7 @@ const {
 // Route: http://localhost:3003/auth/login
 // Type: POST
 
+// Using the passport.authenticate middleware with our local strategy.
 router.post("/auth/login", passport.authenticate("local"), login);
   
 // Register route
