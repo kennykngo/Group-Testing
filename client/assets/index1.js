@@ -42,10 +42,16 @@ const loginUser = (userObj) => {
       type: "POST",
       url: "/auth/login",
       data: userObj,
-    }).then(
-      (res) => resolve({ msg: "success" }),
-      (err) => reject(err)
-    );
+    })
+      .then(
+        (res) => resolve({ msg: "success" }),
+        (err) => reject(err)
+      )
+      .catch((err) => {
+        if (err) {
+          throw err;
+        }
+      });
   });
 };
 const registerUser = (userObj) => {
@@ -54,9 +60,15 @@ const registerUser = (userObj) => {
       type: "POST",
       url: "/auth/register",
       data: userObj,
-    }).then(
-      (res) => resolve(res),
-      (err) => reject(err)
-    );
+    })
+      .then(
+        (res) => resolve(res),
+        (err) => reject(err)
+      )
+      .catch((err) => {
+        if (err) {
+          throw err;
+        }
+      });
   });
 };

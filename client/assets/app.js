@@ -1,4 +1,4 @@
-const mainScreen = document.querySelector(`.main-screen`)
+const mainScreen = document.querySelector(`.main-screen`);
 const pokeName = document.querySelector(`.Pokemon-name`);
 const pokeType = document.querySelector(`.Pokemon-type`);
 const pokeImage = document.querySelector(`.Pokemon-image`);
@@ -12,7 +12,6 @@ let prevUrl = null;
 let nextUrl = null;
 
 $(document).ready(function () {
-
   $(".userSearch").hide();
 
   $(submitBtn).on("click", (event) => {
@@ -66,8 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const fetchPokeData = (id) => {
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-    .then(res => res.json())
-    .then(data => {
+    .then((res) => res.json())
+    .then((data) => {
       console.log(data);
 
       resetScreen();
@@ -83,19 +82,23 @@ const fetchPokeData = (id) => {
       pokeId.textContent = data.id;
 
       pokeFrontImage.src = data.sprites.front_default || "";
+    })
+    .catch((err) => {
+      if (err) {
+        throw err;
+      }
     });
-}
-
+};
 
 const handleLeftButtonClick = () => {
   if (prevUrl) {
-    fetchPokeList(prevUrl)
+    fetchPokeList(prevUrl);
   }
 };
 
 const handleRightButtonClick = () => {
   if (nextUrl) {
-    fetchPokeList(nextUrl)
+    fetchPokeList(nextUrl);
   }
 };
 
@@ -110,40 +113,31 @@ const handleListItemClick = (e) => {
 };
 
 //This is for the next and previous buttons on home page
-leftButton.addEventListener("click", handleLeftButtonClick)
-rightButton.addEventListener("click", handleRightButtonClick)
+leftButton.addEventListener("click", handleLeftButtonClick);
+rightButton.addEventListener("click", handleRightButtonClick);
 
 for (const pokeListitem of pokeListItems) {
-  pokeListitem.addEventListener("click", handleListItemClick)
+  pokeListitem.addEventListener("click", handleListItemClick);
 }
 
 //Napoleon More Testing //////////////////////////////////////
 const fetchPokeList = (url) => {
   //Get data for card displays on home screen
   fetch(url)
-    .then(res => res.json())
-    .then(data => {
+    .then((res) => res.json())
+    .then((data) => {
       console.log(data);
-      const {
-        results,
-        previous,
-        next
-      } = data;
+      const { results, previous, next } = data;
       prevUrl = previous;
       nextUrl = next;
 
       for (let i = 0; i < pokeListItems.length; i++) {
         const pokeListItem = pokeListItems[i];
         const resultData = results[i];
-        const {
-          name
-        } = resultData;
+        const { name } = resultData;
 
         if (resultData) {
-          const {
-            name,
-            url
-          } = resultData;
+          const { name, url } = resultData;
           const urlArray = url.split("/");
           const id = urlArray[urlArray.length - 2];
           pokeListItem.textContent = id + ". " + name;
@@ -151,9 +145,14 @@ const fetchPokeList = (url) => {
           pokeListItem.textContent = "";
         }
       }
+    })
+    .catch((err) => {
+      if (err) {
+        throw err;
+      }
     });
-}
-//Initialize App 
+};
+//Initialize App
 fetchPokeList("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20");
 
 //module.exports = { pokeName };

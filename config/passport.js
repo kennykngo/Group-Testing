@@ -12,19 +12,24 @@ passport.use(
         where: {
           email: email,
         },
-      }).then((dbUser) => {
-        if (!dbUser) {
-          return done(null, false, {
-            message: "incorrect email",
-          });
-        } else if (!dbUser.validPassword(password)) {
-          return done(null, false, {
-            message: "incorrect password",
-          });
-        }
-
-        return done(null, dbUser);
-      });
+      })
+        .then((dbUser) => {
+          if (!dbUser) {
+            return done(null, false, {
+              message: "incorrect email",
+            });
+          } else if (!dbUser.validPassword(password)) {
+            return done(null, false, {
+              message: "incorrect password",
+            });
+          }
+          return done(null, dbUser);
+        })
+        .catch((err) => {
+          if (err) {
+            throw err;
+          }
+        });
     }
   )
 );

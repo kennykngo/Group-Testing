@@ -14,11 +14,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("./client"));
 
 app.use(
-    session({
-        secret: process.env.SECRET,
-        resave: true,
-        saveUninitialized: true,
-    })
+  session({
+    secret: process.env.SECRET,
+    resave: true,
+    saveUninitialized: true,
+  })
 );
 
 // Initializes passport
@@ -35,7 +35,5 @@ const profileRoutes = require("./routes/profile-routes.js");
 app.use(clientRoutes, apiRoutes, logRoutes, profileRoutes);
 
 db.sequelize.sync().then(() => {
-    app.listen(PORT, () => console.log(`listening at http://localhost:${PORT}`));
+  app.listen(PORT, () => console.log(`listening at http://localhost:${PORT}`));
 });
-
-

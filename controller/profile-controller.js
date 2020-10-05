@@ -27,6 +27,12 @@ module.exports = {
         id: req.user.id,
       },
       include: [db.User],
-    }).then((userProfile) => res.send(userProfile));
+    })
+      .then((userProfile) => res.send(userProfile))
+      .catch((err) => {
+        if (err) {
+          throw err;
+        }
+      });
   },
 };

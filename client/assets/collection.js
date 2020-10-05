@@ -10,15 +10,21 @@ $(document).ready(function () {
           // description: $("#descriptionInput").val().trim(),
           name: $("#nameInput").val().trim(),
         },
-      }).then((res) => {
-        console.log(res);
-        // $("#companyInput").val("");
-        // $("#roastInput").val("");
-        // $("#descriptionInput").val("");
-        $("#nameInput").val("");
-        logInstance.close();
-        resolve("success");
-      });
+      })
+        .then((res) => {
+          console.log(res);
+          // $("#companyInput").val("");
+          // $("#roastInput").val("");
+          // $("#descriptionInput").val("");
+          $("#nameInput").val("");
+          logInstance.close();
+          resolve("success");
+        })
+        .catch((err) => {
+          if (err) {
+            throw err;
+          }
+        });
     });
   };
 
@@ -27,19 +33,20 @@ $(document).ready(function () {
       $.ajax({
         type: "GET",
         url: "/logs/user",
-      }).then((logs) => {
-        console.log(logs);
-        $("#logsContainer").empty();
-        logs.forEach((log) => {
-          // , company, roast, description
-          let { name } = log;
-          if (name) {
-            name = `<p>${name}</p>`;
-          } else {
-            name = "";
-          }
-          console.log(name);
-          $("#logsContainer").append(`
+      })
+        .then((logs) => {
+          console.log(logs);
+          $("#logsContainer").empty();
+          logs.forEach((log) => {
+            // , company, roast, description
+            let { name } = log;
+            if (name) {
+              name = `<p>${name}</p>`;
+            } else {
+              name = "";
+            }
+            console.log(name);
+            $("#logsContainer").append(`
           <div class="row">
             <div class="card brown darken-1">
               <div class="card-content white-text">
@@ -48,14 +55,19 @@ $(document).ready(function () {
             </div>
           </div>
           `);
-          // resolve("success");
+            // resolve("success");
+          });
+          // <span class="card-title">${company}</span>
+          // <br>
+          // <p>${roast}</p>
+          // <p>${description}</p>
+          resolve("success");
+        })
+        .catch((err) => {
+          if (err) {
+            throw err;
+          }
         });
-        // <span class="card-title">${company}</span>
-        // <br>
-        // <p>${roast}</p>
-        // <p>${description}</p>
-        resolve("success");
-      });
     });
   };
 
@@ -72,6 +84,12 @@ $(document).ready(function () {
 
   $("#logForm").on("submit", (e) => {
     e.preventDefault();
-    createLog().then(() => renderLogs());
+    createLog()
+      .then(() => renderLogs())
+      .catch((err) => {
+        if (err) {
+          throw err;
+        }
+      });
   });
 });
